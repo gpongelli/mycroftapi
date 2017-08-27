@@ -104,3 +104,4 @@ ENV/
 .idea/vcs.xml
 .idea/mycroft_api.iml
 .idea/workspace.xml
+test.py
