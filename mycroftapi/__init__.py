@@ -5,7 +5,11 @@ class MycroftAPI(object):
     def __init__(self, mycroft_ip):
         self.mycroft_ip = mycroft_ip
         self.url = "ws://" + self.mycroft_ip + ":8181/core"
-        self._ws = create_connection(self.url)
+        try:
+            self._ws = create_connection(self.url)
+        except OSError:
+            print("Could not reach this instance, verify address.")
+            return None
 
     def speak_text(self, text):
         mycroft_speak = ('"{}"'.format(text))
@@ -15,3 +19,7 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Message Sent to Mycroft Instance: {}".format(self.mycroft_ip)
         return response
+
+mycroft_ip = '10.0.0.8'
+text = 'hello Brian'
+mycroft = MycroftAPI(mycroft_ip)
