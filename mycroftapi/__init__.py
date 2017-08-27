@@ -19,7 +19,3 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Message Sent to Mycroft Instance: {}".format(self.mycroft_ip)
         return response
-
-mycroft_ip = '10.0.0.8'
-text = 'hello Brian'
-mycroft = MycroftAPI(mycroft_ip)
