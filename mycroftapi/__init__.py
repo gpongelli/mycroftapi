@@ -5,7 +5,6 @@ class MycroftAPI(object):
     def __init__(self, mycroft_ip):
         self.mycroft_ip = mycroft_ip
         self.url = "ws://" + self.mycroft_ip + ":8181/core"
-        print(self.url)
         self._ws = create_connection(self.url)
 
     def speak_text(self, text):
