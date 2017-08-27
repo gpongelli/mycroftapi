@@ -15,3 +15,6 @@ text = 'hello Brian'
 mycroft = MycroftAPI(mycroft_ip)
 mycroft.speak_text(text)
 ```
+
+# Features
+Currently only has the speak_text function available but more coming soon...
