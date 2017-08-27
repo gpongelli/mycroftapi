@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/mycroft_api.iml
+.idea/workspace.xml
