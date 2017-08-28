@@ -1,4 +1,4 @@
-# Mycroft API
+# Mycroft API [![Build Status](https://travis-ci.org/Geeked-Out-Solutions/mycroftapi.svg?branch=master)](https://travis-ci.org/Geeked-Out-Solutions/mycroftapi)
 To be used to interact with a mycroft instance.  Right now only feature supported is speaking text but more coming soon.
 
 ## Installing
