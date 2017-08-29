@@ -1,4 +1,5 @@
-# Mycroft API
+# Mycroft API [![Build Status](https://travis-ci.org/Geeked-Out-Solutions/mycroftapi.svg?branch=master)](https://travis-ci.org/Geeked-Out-Solutions/mycroftapi) [![Stories in Ready](https://badge.waffle.io/Geeked-Out-Solutions/mycroftapi.svg?label=ready&title=Ready)](http://waffle.io/Geeked-Out-Solutions/mycroftapi)
+
 To be used to interact with a mycroft instance.  Right now only feature supported is speaking text but more coming soon.
 
 ## Installing
@@ -15,3 +16,6 @@ text = 'hello Brian'
 mycroft = MycroftAPI(mycroft_ip)
 mycroft.speak_text(text)
 ```
+
+# Features
+Currently only has the speak_text function available but more coming soon...

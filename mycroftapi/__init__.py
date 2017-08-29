@@ -14,8 +14,11 @@ class MycroftAPI(object):
     def speak_text(self, text):
         mycroft_speak = ('"{}"'.format(text))
         mycroft_type = '"speak"'
-        mycroft_data = '{"expect_response": false, "utterance": %s}, "context": null' % mycroft_speak
-        message = '{"type": ' + mycroft_type + ', "data": ' + mycroft_data + '}'
+        mycroft_data = '{"expect_response": false, "utterance": %s}, ' \
+                       '"context": null' % mycroft_speak
+        message = '{"type": ' + mycroft_type + \
+                  ', "data": ' + mycroft_data + '}'
         self._ws.send(message)
-        response = "Message Sent to Mycroft Instance: {}".format(self.mycroft_ip)
+        response = "Message Sent to Mycroft Instance: {}"\
+            .format(self.mycroft_ip)
         return response
