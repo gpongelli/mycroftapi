@@ -105,3 +105,4 @@ ENV/
 .idea/mycroft_api.iml
 .idea/workspace.xml
 test.py
+.idea/inspectionProfiles/Project_Default.xml
