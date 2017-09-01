@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from mycroftapi import MycroftAPI
 
 
-class TestSet(unittest.TestCase):
+class ConTest(unittest.TestCase):
     def __init__(self):
         m = MycroftAPI(mycroft_ip='127.0.0.1')
         m.__init__ = MagicMock(name='connection')
@@ -12,5 +12,13 @@ class TestSet(unittest.TestCase):
         self.assertEqual(ws.text, ('brian'))
 
 
+def suite():
+    suite = unittest.TestSuite()
+    suite.addTest(ConTest())
+    return suite
+
+
 if __name__ == '__main__':
-    TestSet()
+    runner = unittest.TextTestRunner()
+    test_suite = suite()
+    runner.run(test_suite)
