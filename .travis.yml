@@ -10,7 +10,7 @@ install:
 # command to run tests
 script:
  - pep8 mycroft test
- - nose2 -t ./ -s test --with-coverage
+ - nose2 -t ./ -s tests --with-coverage
 env:
  - IS_TRAVIS=true
 
