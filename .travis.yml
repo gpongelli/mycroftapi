@@ -10,7 +10,7 @@ install:
 # command to run tests
 script:
  - pep8 mycroftapi test
- - nose2 -t ./ -s test --with-coverage
+ - nose2 -t ./ -s test/unittests --with-coverage --config=test/unittests/unittest.cfg
 env:
  - IS_TRAVIS=true
 
