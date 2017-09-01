@@ -9,8 +9,8 @@ install:
  - pip install -r test-requirements.txt
 # command to run tests
 script:
- - pep8 mycroftapi tests
- - nose2 -t ./ -s tests --with-coverage
+ - pep8 mycroftapi test
+ - nose2 -t ./ -s test --with-coverage
 env:
  - IS_TRAVIS=true
 
