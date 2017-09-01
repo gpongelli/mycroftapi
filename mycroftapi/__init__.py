@@ -2,7 +2,7 @@ from websocket import create_connection, WebSocket
 
 
 class MycroftAPI(object):
-    def __init__(self, mycroft_ip):
+    def open_ws_connection(self, mycroft_ip):
         self.mycroft_ip = mycroft_ip
         self.url = "ws://" + self.mycroft_ip + ":8181/core"
         try:
