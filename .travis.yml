@@ -1,21 +1,18 @@
 language: python
-before_install:
- - pip install pep8
-
 python:
   - "2.7"
   - "3.4"
   - "3.6"
-
+# command to install dependencies
 install:
  - VIRTUALENV_ROOT=${VIRTUAL_ENV}
  - pip install -r test-requirements.txt
-
+# command to run tests
 script:
- - pep8 mycroftapi test
- - nose2 -t ./ -s test --with-coverage
- env:
-  - IS_TRAIVS=true
+ - pep8 mycroft test
+ - nose2 -t ./ -s test/unittests/ --with-coverage
+env:
+ - IS_TRAVIS=true
 
 after_success:
   coveralls
