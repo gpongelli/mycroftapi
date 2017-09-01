@@ -1,12 +1,21 @@
 language: python
 before_install:
     - pip install pep8
-    
+
+python:
+  - "2.7"
+  - "3.4"
+  - "3.6"
+
+install:
+ - VIRTUALENV_ROOT=${VIRTUAL_ENV}
+ - pip install -r test-requirements.txt
+
 script:
-    # Run pep8 on all .py files in all subfolders
-    # (I ignore "E402: module level import not at top of file"
-    # because of use case sys.path.append('..'); import <module>)
-    - find . -name \*.py -exec pep8 --ignore=E402 {} +
+ - pep8 mycroftapi test
+ - nose2 -t ./ -s test --with-coverage
+ env:
+  - IS_TRAIVS=true
 
 after_success:
   coveralls
