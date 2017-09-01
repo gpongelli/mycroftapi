@@ -13,6 +13,4 @@ class TestSet(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    suite = unittest.TestSuite()
-    loader = unittest.TestLoader()
-    unittest.TextTestRunner(verbosity=2).run(suite)
+    TestSet()
