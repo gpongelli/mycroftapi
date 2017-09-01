@@ -1,4 +1,4 @@
 from unittest import TestLoader
 
-if __name == "__main__":
+if __name__ == "__main__":
     tests = TestLoader().discover(dirname(__file__), "*.py")
