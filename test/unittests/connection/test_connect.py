@@ -47,8 +47,7 @@ class TestSet(unittest.TestCase):
         m = MycroftAPI('1.1')
 
         mock_create_conn.side_effect = OSError("Could not connect, verify ip.")
-        with self.assertRaises(OSError):
-            raise OSError
+        self.assertRaises(OSError, m.__init__('1.1'))
 
 
 if __name__ == '__main__':
