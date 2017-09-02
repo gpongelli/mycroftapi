@@ -40,10 +40,5 @@ class TestSet(unittest.TestCase):
         self.assertRaises(OSError, MycroftAPI.__init__(self, mycroft_ip='1.1'))
 
 
-
-
-
-
-
 if __name__ == '__main__':
     unittest.main()
