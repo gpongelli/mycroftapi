@@ -8,7 +8,7 @@ class MycroftAPI(object):
         try:
             self._ws = create_connection(self.url)
         except OSError:
-            print("Could not reach this instance, verify address.")
+            print("Could not connect, verify ip.")
             return None
 
     def speak_text(self, text):

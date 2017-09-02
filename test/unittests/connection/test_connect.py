@@ -36,6 +36,21 @@ class TestSet(unittest.TestCase):
         m.speak_text(text)
         self.assertEqual(message, mock_ws.message)
 
+    @patch('mycroftapi.create_connection')
+    def test_os_error(self, mock_create_conn):
+        # Create simple replacement websocket that won't work
+        # to test exception
+        mock_ws = MockWS()
+        mock_create_conn.return_value = mock_ws
+
+        # Test that init calls create_connection with wrong param
+        m = MycroftAPI('1.1')
+
+        mock_create_conn.side_effect = OSError("Could not connect, verify ip.")
+        with self.assertRaises(OSError):
+            raise OSError
+
+
 
 if __name__ == '__main__':
     unittest.main()
