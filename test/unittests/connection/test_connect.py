@@ -51,6 +51,5 @@ class TestSet(unittest.TestCase):
             raise OSError
 
 
-
 if __name__ == '__main__':
     unittest.main()
