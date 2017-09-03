@@ -22,3 +22,24 @@ class MycroftAPI(object):
         response = "Message Sent to Mycroft Instance: {}"\
             .format(self.mycroft_ip)
         return response
+
+    def blink_eyes(self, times):
+        mycroft_type = '"enclosure.system.blink", {"times": %s}' % times
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to blink eye %s times" % times
+        return response
+
+    def eyes_off(self):
+        mycroft_type = '"enclosure.eyes.off"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to turn off eyes"
+        return response
+
+    def eyes_on(self):
+        mycroft_type = '"enclosure.eyes.on"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to turn on eyes"
+        return response
