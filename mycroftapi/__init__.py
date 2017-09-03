@@ -139,4 +139,3 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Sent command to mycroft have eyes change color"
         return response
-
