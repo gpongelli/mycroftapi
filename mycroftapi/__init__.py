@@ -31,9 +31,8 @@ class MycroftAPI(object):
             side (str): 'r', 'l', or 'b' for 'right', 'left' or 'both'
 
         """
-        side = '""'
         mycroft_type = '"enclosure.eyes.blink"'
-        mycroft_data = '{"side": %s}, ' \
+        mycroft_data = '{"side": "%s" }, ' \
                        '"context": null' % side
         message = '{"type": ' + mycroft_type + \
                   ', "data": ' + mycroft_data + '}'
@@ -102,5 +101,24 @@ class MycroftAPI(object):
         response = "Sent command to mycroft to squint eyes on mark1"
         return response
 
+    def eyes_look(self, side):
+        """
+        Used to make eyes look to the given side:
+
+        Args:
+            side (str): 'r', 'l', 'u', 'd', or 'c' for
+
+             'right', 'left' 'up', 'down' or 'crossed',
+
+        """
+        mycroft_type = '"enclosure.eyes.look"'
+        mycroft_data = '{"side": "%s"}, ' \
+                       '"context": null' % side
+        message = '{"type": ' + mycroft_type + \
+                  ', "data": ' + mycroft_data + '}'
+        print(message)
+        self._ws.send(message)
+        response = "Sent command to mycroft have eyes look on side %s" % side
+        return response
 
 
