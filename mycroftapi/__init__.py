@@ -121,4 +121,22 @@ class MycroftAPI(object):
         response = "Sent command to mycroft have eyes look on side %s" % side
         return response
 
+    def eyes_color(self, r, g, b):
+        """
+        Used to change color of eyes on mark1
+
+        Args:
+            r (int): 0-255, red value
+            g (int): 0-255, green value
+            b (int): 0-255, blue value
+        """
+        mycroft_type = '"enclosure.eyes.color"'
+        mycroft_data = '{"r": %s, "g": %s, "b": %s}, ' \
+                       '"context": null' % (r, g, b)
+        message = '{"type": ' + mycroft_type + \
+                  ', "data": ' + mycroft_data + '}'
+        print(message)
+        self._ws.send(message)
+        response = "Sent command to mycroft have eyes change color"
+        return response
 
