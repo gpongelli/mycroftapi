@@ -92,4 +92,15 @@ class MycroftAPI(object):
         response = "Sent command to mycroft to %s speaker" % mute_speaker
         return response
 
+    def squint_eyes(self):
+        """
+        Used to make mark1 eyes look like a squint
+        """
+        mycroft_type = '"enclosure.eyes.narrow"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to squint eyes on mark1"
+        return response
+
+
 
