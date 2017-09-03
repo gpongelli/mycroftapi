@@ -73,3 +73,23 @@ class MycroftAPI(object):
         response = "Sent command to mycroft to reset mark1 screen"
         return response
 
+    def mute_speaker(self, mute):
+        """
+        Used to mute speaker on enclosure
+
+        Args:
+            mute (boolean): True or False - True to mute, False to unmute
+
+        """
+        if mute is True:
+            mycroft_type = '"enclosure.system.mute"'
+            mute_speaker = 'mute'
+        else:
+            mycroft_type = '"enclosure.system.unmute"'
+            mute_speaker = 'unmute'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to %s speaker" % mute_speaker
+        return response
+
+
