@@ -24,6 +24,13 @@ class MycroftAPI(object):
         return response
 
     def blink_eyes(self, side):
+        """
+        Used to blink eyes on a mark1 device, side can be values of:
+
+        Args:
+            side (str): 'r', 'l', or 'b' for 'right', 'left' or 'both'
+
+        """
         side = '""'
         mycroft_type = '"enclosure.eyes.blink"'
         mycroft_data = '{"side": %s}, ' \
@@ -36,16 +43,33 @@ class MycroftAPI(object):
         return response
 
     def eyes_off(self):
+        """
+        Used to turn off eyes on mark1 device
+        """
         mycroft_type = '"enclosure.eyes.off"'
         message = '{"type": ' + mycroft_type + '}'
         print(message)
         self._ws.send(message)
-        response = "Sent command to mycroft to turn off eyes"
+        response = "Sent command to mycroft to turn off  mark1 eyes"
         return response
 
     def eyes_on(self):
+        """
+        Used to turn on eyes on mark1 device.
+        """
         mycroft_type = '"enclosure.eyes.on"'
         message = '{"type": ' + mycroft_type + '}'
         self._ws.send(message)
-        response = "Sent command to mycroft to turn on eyes"
+        response = "Sent command to mycroft to turn on mark1 eyes"
         return response
+
+    def reset_display(self):
+        """
+        Used to reset display of mark1 back to started state
+        """
+        mycroft_type = '"enclosure.reset"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to reset mark1 screen"
+        return response
+
