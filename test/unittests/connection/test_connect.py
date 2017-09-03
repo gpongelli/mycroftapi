@@ -18,12 +18,10 @@ class TestSet(unittest.TestCase):
         # when creating sockets
         mock_ws = MockWS()
         mock_create_conn.return_value = mock_ws
-
         # Test that init calls create_connection with correct param
         m = MycroftAPI('127.0.0.1')
         mock_create_conn.assert_called_with(
             "ws://" + '127.0.0.1' + ":8181/core")
-
         # Check that message bus message looks like what we expect
         text = 'hello brian'
         # Expected data to websocket
