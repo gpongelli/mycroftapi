@@ -49,4 +49,3 @@ class TestSet(unittest.TestCase):
         message = '{"type": ' + mycroft_type + '}'
         m.eyes_off()
         self.assertEqual(message, mock_ws.message)
-
