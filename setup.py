@@ -4,7 +4,7 @@ setup(
     name='mycroftapi',
     packages=['mycroftapi'],
     install_requires=['websocket-client==0.44.0'],
-    version='0.1.2',
+    version='2.0',
     description='a library to communicate with Mycroft API',
     author='Brian Hopkins',
 
