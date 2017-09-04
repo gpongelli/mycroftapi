@@ -186,3 +186,13 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Sent command to mycroft to start talk animation"
         return response
+
+    def mouth_think(self):
+        """
+        Used to show thinking animation
+        """
+        mycroft_type = '"enclosure.mouth.think"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to start think animation"
+        return response
