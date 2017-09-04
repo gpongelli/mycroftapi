@@ -169,10 +169,20 @@ class MycroftAPI(object):
 
     def mouth_reset(self):
         """
-        Used to restore the eyes to their default state
+        Used to reset mouth to standard state
         """
         mycroft_type = '"enclosure.mouth.reset"'
         message = '{"type": ' + mycroft_type + '}'
         self._ws.send(message)
         response = "Sent command to mycroft to reset mouth"
+        return response
+
+    def mouth_talk(self):
+        """
+        Used to show a generic talking animation
+        """
+        mycroft_type = '"enclosure.mouth.talk"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to start talk animation"
         return response
