@@ -166,3 +166,13 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Sent command to mycroft to reset eyes"
         return response
+
+    def mouth_reset(self):
+        """
+        Used to restore the eyes to their default state
+        """
+        mycroft_type = '"enclosure.mouth.reset"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to reset mouth"
+        return response
