@@ -1,19 +1,17 @@
-.. :changelog:
+****************************
+Mycroft API Changelog
+****************************
 
-Release History
----------------
+Here you can see the full list of changes between each release.
 
-dev
-+++
+v2.0 (2017 Sept 4)
+=====================
 
-**Improvements**
+- supports most of the api enclosure functions from mycroft-core enclosure
+- can now change eye colors and more
 
-**Bugfixes**
 
- 0.1.2 (8-27-2017)
-+++++++++++++++++++
-Initial release
+v0.1.2 (2017 Aug 27)
+=====================
 
-**Improvements**
-
-**Dependencies**
+- pre release not all features ready
