@@ -30,6 +30,5 @@ class TestSet(unittest.TestCase):
         self.assertEqual(message, mock_ws.message)
 
 
-
 if __name__ == '__main__':
     unittest.main()
