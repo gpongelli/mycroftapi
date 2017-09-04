@@ -196,3 +196,39 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Sent command to mycroft to start think animation"
         return response
+
+    def mouth_listen(self):
+        """
+        Used to show listen animation
+        """
+        mycroft_type = '"enclosure.mouth.listen"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to start listen animation"
+        return response
+
+    def mouth_smile(self):
+        """
+        Used to show smile animation
+        """
+        mycroft_type = '"enclosure.mouth.smile"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to start smile animation"
+        return response
+
+    def mouth_text(self, text):
+        """
+        Used to display text scrolling if needed based on len
+
+        Args:
+            text (str): text string to display
+        """
+        mycroft_type = '"enclosure.mouth.text"'
+        mycroft_data = '{"text": %s}, ' \
+                       '"context": null' % text
+        message = '{"type": ' + mycroft_type + \
+                  ', "data": ' + mycroft_data + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to display text %s" % text
+        return response
