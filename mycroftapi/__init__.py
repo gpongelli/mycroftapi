@@ -139,3 +139,30 @@ class MycroftAPI(object):
         self._ws.send(message)
         response = "Sent command to mycroft have eyes change color"
         return response
+
+    def eyes_brightness(self, level):
+        """
+        Used to change brightness level of eyes
+
+        Args:
+            level (int): 1-30, bigger numbers are brighter
+        """
+        mycroft_type = '"enclosure.eyes.level"'
+        mycroft_data = '{"level": %s}, ' \
+                       '"context": null' % level
+        message = '{"type": ' + mycroft_type + \
+                  ', "data": ' + mycroft_data + '}'
+        print(message)
+        self._ws.send(message)
+        response = "Sent command to mycroft to adjust eye brightness"
+        return response
+
+    def eyes_reset(self):
+        """
+        Used to restore the eyes to their default state
+        """
+        mycroft_type = '"enclosure.eyes.reset"'
+        message = '{"type": ' + mycroft_type + '}'
+        self._ws.send(message)
+        response = "Sent command to mycroft to reset eyes"
+        return response
