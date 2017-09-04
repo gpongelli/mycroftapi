@@ -6,8 +6,10 @@ To be used to interact with a mycroft instance https://mycroft.ai.  Right now on
 `pip install mycroftapi`
 
 ## How to Use
-Below is a python code sample to show how to use the API, currently it is only speaking text but more will be coming.
+Below is a python code sample to show how to use the API, currently has a lot of things supported from changing eye color and more.
 
+
+This example shows how to have Hello Brian scrolled across the display until I send it a reset.
 ```
 from mycroftapi import MycroftAPI
 
@@ -18,4 +20,11 @@ mycroft.speak_text(text)
 ```
 
 # Features
-Currently only has the speak_text function available but more coming soon...
+- scroll text
+- change eye colors
+- blink eyes
+- eyes off/on
+- mute speaker
+- change eye brightness
+- control mouth visuals like smiling, etc
+- speak text to mycroft to have it speak it
