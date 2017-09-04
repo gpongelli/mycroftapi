@@ -32,7 +32,7 @@ class MycroftAPI(object):
 
         """
         mycroft_type = '"enclosure.eyes.blink"'
-        mycroft_data = '{"side": "%s" }, ' \
+        mycroft_data = '{"side": "%s"}, ' \
                        '"context": null' % side
         message = '{"type": ' + mycroft_type + \
                   ', "data": ' + mycroft_data + '}'
