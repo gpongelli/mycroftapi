@@ -7,7 +7,7 @@ This library enables the management of some of the facilites provided by a Mycro
 
 # Using
 
-The following examples are in-line pythion and can be run on the Mycroft. Using a remote IP address, the code can be executed from elsewhere.
+The following examples are in-line python and can be run on the Mycroft. Using a remote IP address, the code can be executed from elsewhere.
 
 Each function should be proceeded with the Python interpreter, import and API code:
 ```
