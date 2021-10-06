@@ -1,4 +1,5 @@
 import unittest
+import sys
 from unittest.mock import patch
 from mycroftapi import MycroftAPI
 
@@ -35,7 +36,11 @@ class TestSet(unittest.TestCase):
         self.assertEqual(message, mock_ws.message)
 
     def test_os_error(self):
-        self.assertRaises(OSError, MycroftAPI.__init__(self, mycroft_ip='1.1'))
+        mycroft_obj = MycroftAPI.__init__(self, mycroft_ip='1.1')
+        if sys.version_info < (3, 8):
+            self.assertRaises(OSError, mycroft_obj)
+        else:
+            self.assertEqual(None, mycroft_obj)
 
 
 if __name__ == '__main__':
